@@ -1,0 +1,16 @@
+{
+  "GameID": 567,
+  "Name": "新乡麻将",
+  "GetMaxScoring": false,
+  "MinHuFan": 0,
+  "ScoringMask": [
+    {
+      "FanInfo": {
+        "FanID": 19,
+        "Name": "7对",
+        "FanShu": 9
+      },
+      "HuMask": 3
+    }
+  ]
+}

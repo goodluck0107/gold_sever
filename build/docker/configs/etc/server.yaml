@@ -1,0 +1,99 @@
+# 比较奇怪，为了兼容老服务器配置结构
+
+## 数据引用
+host: &host 192.168.77.117
+inhost: &inhost 192.168.77.117
+
+## 第三方服务配置
+service:
+  wxappid: wx5e28ff8a8b1f4c07
+  wxappsecert: f9254ccf4f0d50fb987ea96ceec24a45
+  smshost: http://hz.hhkin.com
+  adminhost: http://192.168.77.117
+  drobot: b89965f47b847149ec2f004ab6e72a42786ed18c2a6f7730e2a32f8ef3b931f8
+  gogroup: b89965f47b847149ec2f004ab6e72a42786ed18c2a6f7730e2a32f8ef3b931f8
+
+## 数据库配置
+db_mysql: &def_mysql
+  user: root
+  password: Test1234
+  addr: *host
+  port: 3306
+  dbname: chess
+  timeout: 10s
+  parsetime: true
+  loc: Local
+  charset: utf8mb4
+db_redis: &def_redis
+  db: 0
+  auth: E8G7ll!@!!
+  addr: *host
+  port: 16379
+db_pubredis: &def_pubredis
+  db: 0
+  auth: E8G7ll!@!!
+  addr: *host
+  port: 16379
+db_storeredis: &def_storeredis
+  db: 0
+  auth: E8G7ll!@!!
+  addr: *host
+  port: 16379
+
+## 服务器共有配置
+common: &common
+  id: 0
+  usesafeip: 1
+  enabledyk: true
+  encode: 0
+  encodeclientkey: kaayou20190110#$
+  encodephpkey: kaayou20190110$#
+
+## 以下为引用
+default_config: &defaultConfig
+  host: *host
+  inhost: *inhost
+  safehost: *host
+  safecenter: *host
+  user: *inhost
+  center: *host
+  incenter: *inhost
+  api: *host
+  <<: *common
+  db_mysql:
+    <<: *def_mysql
+  db_redis:
+    <<: *def_redis
+  db_pubredis:
+    <<: *def_pubredis
+  db_storeredis:
+    <<: *def_storeredis
+
+server_config:
+  gate:
+    port: 8233
+    <<: *defaultConfig
+  robot:
+    port: 9340
+    <<: *defaultConfig
+  backend:
+    port: 9030
+    <<: *defaultConfig
+  api:
+    port: 9033
+    <<: *defaultConfig
+  user:
+    port: 9031
+    <<: *defaultConfig
+  center:
+    port: 9032
+    <<: *defaultConfig
+  sport10:
+    port: 9080
+    <<: *defaultConfig
+  sport11:
+    port: 9081
+    <<: *defaultConfig
+  sport12:
+    port: 9082
+    <<: *defaultConfig

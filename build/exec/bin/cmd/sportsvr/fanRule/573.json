@@ -1,0 +1,24 @@
+{
+    "GameID":        573,
+    "Name":"鄂州晃晃",
+    "GetMaxScoring": false,
+    "MinHuFan":      0,     
+    "ScoringMask":[
+        {
+            "FanInfo":{
+                "FanID": 19,
+                "Name":"7对",
+                "FanShu": 9
+            },
+            "HuMask": 3
+        },
+        {
+            "FanInfo": {
+                "FanID": 48,
+                "Name": "碰碰胡",
+                "FanShu": 3
+            },
+            "HuMask": 3
+        }
+    ]
+}

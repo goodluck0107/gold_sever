@@ -1,0 +1,6 @@
+case infrastructure.KIND_ID_JL_JLMJ: //监利麻将 472
+		v = new(Hubei_JianLi.Game_mj_jl_jlmj)
+	case infrastructure.KIND_ID_JL_JLKJ: //监利开机 464
+		v = new(Hubei_JianLi.Game_jl_jlkj)
+	case infrastructure.KIND_ID_MJ_JLHZLZG: //监利红中癞子杠 420
+		v = new(Hubei_JianLi.Game_mj_jlhzlzg)

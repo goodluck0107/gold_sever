@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>友娱麻将 - 立即下载</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        body {
+            position: relative;
+            cursor: pointer;
+            font-family: 'Microsoft YaHei', sans-serif;
+            background-color: #000;
+        }
+        
+        .bg-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .bg-image {
+            position: absolute;
+            /* 初始设置为自动，JS会根据实际情况调整 */
+            width: auto;
+            height: auto;
+            /* 确保图片足够大 */
+            min-width: 100%;
+            min-height: 100%;
+            /* 居中显示 */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-container">
+        <img class="bg-image" src="bg.jpg" alt="友娱麻将背景" id="bgImage">
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const bgImage = document.getElementById('bgImage');
+            const bgContainer = document.querySelector('.bg-container');
+            
+            // 完美适配函数
+            function perfectFit() {
+                const imgRatio = bgImage.naturalWidth / bgImage.naturalHeight;
+                const containerRatio = bgContainer.offsetWidth / bgContainer.offsetHeight;
+                
+                if (containerRatio > imgRatio) {
+                    // 容器比图片更宽 - 按高度100%显示
+                    bgImage.style.width = 'auto';
+                    bgImage.style.height = '100%';
+                } else {
+                    // 容器比图片更高 - 按宽度100%显示
+                    bgImage.style.width = '100%';
+                    bgImage.style.height = 'auto';
+                }
+                
+                // 确保图片完全覆盖容器
+                bgImage.style.minWidth = '100%';
+                bgImage.style.minHeight = '100%';
+                bgImage.style.maxWidth = 'none';
+                bgImage.style.maxHeight = 'none';
+            }
+            
+            // 图片加载处理
+            if (bgImage.complete) {
+                perfectFit();
+                document.body.style.opacity = 1;
+            } else {
+                bgImage.onload = function() {
+                    perfectFit();
+                    document.body.style.opacity = 1;
+                };
+                bgImage.onerror = function() {
+                    console.error('背景图片加载失败');
+                    document.body.style.opacity = 1;
+                };
+            }
+            
+            // 高级resize处理
+            let resizeTimeout;
+            window.addEventListener('resize', function() {
+                clearTimeout(resizeTimeout);
+                resizeTimeout = setTimeout(perfectFit, 100);
+            });
+            
+            // 点击下载功能
+            document.body.addEventListener('click', function() {
+                // 替换为您的实际下载链接
+                window.location.href = 'https://example.com/youyumajiang.apk';
+            });
+            
+            // 防止拖动
+            document.addEventListener('touchmove', function(e) {
+                e.preventDefault();
+            }, { passive: false });
+        });
+    </script>
+</body>
+</html>
+</html>

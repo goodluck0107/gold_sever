@@ -1,0 +1,62 @@
+version: '3'
+services:
+  apisvr:
+    image: 192.168.77.117/chess/apisvr:0.0.0.1
+    container_name: apisvr
+    ports:
+      - "9033:9033"
+      - "19033:19033"
+    volumes:
+      - ./wuhan/apisvr/log/:/data/App/cmd/apisvr/log
+      - /etc:/data/App/configs/etc
+      - /etc/localtime:/etc/localtime
+    environment:
+      - SERVER_ID=0
+  backendsvr:
+    image: 192.168.77.117/chess/backendsvr:0.0.0.1
+    container_name: backendsvr
+    ports:
+      - "9030:9030"
+      - "19030:19030"
+    volumes:
+      - ./wuhan/backendsvr/log/:/data/App/cmd/backendsvr//log
+      - /etc:/data/App/configs/etc
+      - /etc/localtime:/etc/localtime
+    environment:
+      - SERVER_ID=0
+  usersvr:
+    image: 192.168.77.117/chess/usersvr:0.0.0.1
+    container_name: usersvr
+    ports:
+      - "9031:9031"
+      - "19031:19031"
+    volumes:
+      - ./wuhan/usersvr/log/:/data/App/cmd/usersvr/log
+      - /etc:/data/App/configs/etc
+      - /etc/localtime:/etc/localtime
+    environment:
+      - SERVER_ID=0
+  centersvr:
+    image: 192.168.77.117/chess/centersvr:0.0.1.9
+    container_name: centersvr
+    ports:
+      - "9032:9032"
+      - "19032:19032"
+    volumes:
+      - ./wuhan/centersvr/log/:/data/App/cmd/centersvr/log
+      - /etc:/data/App/configs/etc
+      - /etc/localtime:/etc/localtime
+    environment:
+      - SERVER_ID=0
+  sportsvr:
+    image: 192.168.77.117/chess/sportsvr:0.0.0.2
+    container_name: sportsvr
+    ports:
+      - "9080:9080"
+      - "19080:19080"
+    volumes:
+      - ./wuhan/sportsvr/log/:/data/App/cmd/sportsvr/log
+      - /etc:/data/App/configs/etc
+      - /etc/localtime:/etc/localtime
+    environment:
+      - SERVER_ID=10

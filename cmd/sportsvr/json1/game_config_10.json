@@ -1,0 +1,14 @@
+{
+  "id": 10,
+  "safehost": "127.0.0.1:8080",
+  "host": "192.168.1.238:8080",
+  "inhost": "127.0.0.1:8080",
+  "redis": "127.0.0.1:6379",
+  "rcredis": "127.0.0.1:6379",
+  "hall": "127.0.0.1:8032",
+  "db": "root:root@tcp(127.0.0.1:3306)/kygame?charset=utf8mb4&timeout=10s&parseTime=true&loc=Local",
+  "redisauth": "",
+  "encode": 0,
+  "encodeclientkey": "useryou20190110#$",
+  "encodephpkey": "useryou20190110$#"
+}

@@ -1,0 +1,40 @@
+{
+  "GameID": 575,
+  "Name": "通山晃晃",
+  "GetMaxScoring": false,
+  "MinHuFan": 0,
+  "ScoringMask": [
+    {
+      "FanInfo": {
+        "FanID": 19,
+        "Name": "7对",
+        "FanShu": 9
+      },
+      "HuMask": 3
+    },
+    {
+      "FanInfo": {
+        "FanID": 22,
+        "Name": "清一色",
+        "FanShu": 7
+      },
+      "HuMask": 3
+    },
+    {
+      "FanInfo": {
+        "FanID": 48,
+        "Name": "碰碰胡",
+        "FanShu": 8
+      },
+      "HuMask": 3
+    },
+    {
+      "FanInfo": {
+        "FanID": 83,
+        "Name": "将一色",
+        "FanShu": 1
+      },
+      "HuMask": 3
+    }
+  ]
+}

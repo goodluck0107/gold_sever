@@ -1,0 +1,11 @@
+{
+  "id": 22,
+  "safehost": "127.0.0.1:8095",
+  "host": "127.0.0.1:8095",
+  "inhost": "127.0.0.1:8095",
+  "redis": "127.0.0.1:6379",
+  "rcredis": "127.0.0.1:6379",
+  "hall": "127.0.0.1:8032",
+  "db": "root:123456@tcp(127.0.0.1:3306)/kygame?charset=utf8mb4&timeout=10s&parseTime=true&loc=Local",
+  "redisauth": ""
+}

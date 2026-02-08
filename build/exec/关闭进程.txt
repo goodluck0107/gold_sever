@@ -1,0 +1,11 @@
+//先查进程号
+pidof ./apisvr
+pidof ./backendsvr
+pidof ./centersvr
+pidof ./sportsvr
+pidof ./usersvr
+//全部杀完
+kill 进程号
+
+//查端口占用
+lsof -i :端口号

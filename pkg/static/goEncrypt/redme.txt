@@ -1,0 +1,28 @@
+func aescbctest() {
+	plaintext := []byte("床前明月光，疑是地上霜，举头望明月，学习go语言")
+	log.Println("明文为：", string(plaintext))
+
+	//传入明文和自己定义的密钥，密钥为16字节，如果不足16字节函数内部自动补全，超过16字节函数内部截取
+	cryptText := EncrptUtl.AesCBC_Encrypt(plaintext, []byte("wumansgygoaescry"))
+	log.Println("AES的CBC模式加密后的密文为:", cryptText)
+	//log.Println("AES的CBC模式加密后的密文为:", base64.StdEncoding.EncodeToString(cryptText))
+
+	//传入密文和自己定义的密钥，需要和加密的密钥一样，不一样会报错，16字节，如果不足16字节函数内部自动补全，超过16字节函数内部截取
+	newplaintext := EncrptUtl.AesCBC_Decrypt(cryptText, []byte("wumansgygoaescry"))
+
+	log.Println("AES的CBC模式解密完：", string(newplaintext))
+}
+
+func aesctrtest() {
+	plaintext := []byte("床前明月光98，疑是地上霜67，举头望明月46，学习go语言34")
+	log.Println("明文为：", string(plaintext))
+
+	//传入明文和自己定义的密钥，密钥为16字节，如果不足16字节函数内部自动补全，超过16字节函数内部截取
+	cryptText := EncrptUtl.AesCTR_Encrypt(plaintext, []byte("wumansgygoaesctr"))
+	log.Println("AES的CTR模式加密后的密文为:", base64.StdEncoding.EncodeToString(cryptText))
+
+	//传入密文和自己定义的密钥，需要和加密的密钥一样，不一样会报错，16字节，如果不足16字节函数内部自动补全，超过16字节函数内部截取
+	newplaintext := EncrptUtl.AesCTR_Decrypt(cryptText, []byte("wumansgygoaesctr"))
+
+	log.Println("AES的CTR模式解密完：", string(newplaintext))
+}

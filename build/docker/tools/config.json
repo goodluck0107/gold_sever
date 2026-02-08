@@ -1,0 +1,21 @@
+{
+  "Mysql": {
+    "kygame": {
+      "Addr": "127.0.0.1:3306",
+      "User": "root",
+      "Password": "123456",
+      "Db": "kygame",
+      "MaxIdle": 20,
+      "Timeout": 10
+    }
+  },
+  "Redis": {
+    "Cache": {
+      "Addr": "127.0.0.1:6379",
+      "Auth": "",
+      "MaxIdle": 60,
+      "MaxActive": 256,
+      "DB": 0
+    }
+  }
+}

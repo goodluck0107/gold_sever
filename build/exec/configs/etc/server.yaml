@@ -1,0 +1,111 @@
+# 比较奇怪，为了兼容老服务器配置结构
+
+## 数据引用
+host: &host 18.162.73.193
+inhost: &inhost 127.0.0.1
+
+## 第三方服务配置
+service:
+  wxappid: wxc9733c8420b6ee2d
+  wxappsecert: c47ab5dad38d65698ebf77717a0f42bb
+  smshost: http://hz.hhkin.com
+  adminhost: http://18.162.73.193/
+  drobot: b89965f47b847149ec2f004ab6e72a42786ed18c2a6f7730e2a32f8ef3b931f811
+  gogroup: b89965f47b847149ec2f004ab6e72a42786ed18c2a6f7730e2a32f8ef3b931f811
+
+## 数据库配置
+db_mysql: &def_mysql
+  user: root
+  password: micronpk@18*12
+  addr: 18.162.73.193
+  port: 3306
+  dbname: chess
+  timeout: 10s
+  parsetime: true
+  loc: Local
+  charset: utf8mb4
+db_redis: &def_redis
+  db: 0
+  auth: micredis@193?73
+  addr: 18.162.73.193
+  port: 6379
+db_pubredis: &def_pubredis
+  db: 0
+  auth: micredis@193?73
+  addr: 18.162.73.193
+  port: 6379
+db_storeredis: &def_storeredis
+  db: 0
+  auth: micredis@193?73
+  addr: 18.162.73.193
+  port: 6379
+
+## 服务器共有配置
+common: &common
+  id: 0
+  usesafeip: 1
+  enabledyk: true
+  encode: 0
+  encodeclientkey: kaayou20190110#$
+  encodephpkey: kaayou20190110$#
+
+## 以下为引用
+default_config: &defaultConfig
+  host: *host
+  inhost: *inhost
+  safehost: *host
+  safecenter: *host
+  user: *inhost
+  center: *host
+  incenter: *inhost
+  api: *host
+  <<: *common
+  db_mysql:
+    <<: *def_mysql
+  db_redis:
+    <<: *def_redis
+  db_pubredis:
+    <<: *def_pubredis
+  db_storeredis:
+    <<: *def_storeredis
+
+server_config:
+  gate:
+    port: 8233
+    <<: *defaultConfig
+  robot:
+    port: 9340
+    <<: *defaultConfig
+  backend:
+    port: 9030
+    <<: *defaultConfig
+  api:
+    port: 9033
+    <<: *defaultConfig
+  user:
+    port: 9031
+    <<: *defaultConfig
+  center:
+    port: 9032
+    <<: *defaultConfig
+  sport10:
+    port: 9080
+    <<: *defaultConfig
+  sport11:
+    port: 9081
+    <<: *defaultConfig
+  sport12:
+    port: 9082
+    <<: *defaultConfig
+  sport13:
+    port: 9083
+    <<: *defaultConfig
+  sport14:
+    port: 9084
+    <<: *defaultConfig
+  sport15:
+    port: 9085
+    <<: *defaultConfig
+  sport16:
+    port: 9086
+    <<: *defaultConfig

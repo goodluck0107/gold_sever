@@ -1,0 +1,43 @@
+{
+  "GameID": 600,
+  "Name": "鄂州凑一色",
+  "GetMaxScoring": false,
+  "MinHuFan": 0,
+  "ScoringMask": [
+    {
+      "FanInfo": {
+        "FanID": 22,
+        "Name": "清一色",
+        "FanShu": 3
+      },
+      "HuMask": 3
+    },
+    {
+      "FanInfo": {
+        "FanID": 48,
+        "Name": "碰碰胡",
+        "FanShu": 3
+      },
+      "HuMask": 3
+    },
+    {
+      "FanInfo": {
+        "FanID": 52,
+        "Name": "全求人",
+        "FanShu": 6
+      },
+      "HuMask": 3,
+      "DiscardID": [
+        48
+      ]
+    },
+    {
+      "FanInfo": {
+        "FanID": 49,
+        "Name": "混一色",
+        "FanShu": 3
+      },
+      "HuMask": 3
+    }
+  ]
+}
